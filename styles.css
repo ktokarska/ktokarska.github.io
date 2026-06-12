@@ -171,11 +171,11 @@ img{max-width:100%;display:block;}
 .hero-photo .portrait{width:100%;height:auto;border-radius:var(--radius);}
 .hero-photo::before{ /* horizontal fade from the warm hero tone on the left edge */
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(to right, var(--bg-2) 0%, transparent 38%);
+  background:linear-gradient(to right, var(--bg-2) 0%, transparent 12%);
 }
 .hero-photo::after{ /* vertical fade into the hero tone at the bottom */
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(to bottom, transparent 55%, var(--bg-2) 100%);
+  background:linear-gradient(to bottom, transparent 88%, color-mix(in srgb, var(--bg-2) 70%, transparent) 100%);
 }
 
 /* ---------- Stats band ---------- */
