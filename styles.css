@@ -377,7 +377,7 @@ img{max-width:100%;display:block;}
 }
 .page-head .wrap{position:relative;}
 .page-head h1{margin-bottom:14px;color:var(--accent);}
-.page-head .intro{margin-bottom:0;}
+.page-head .intro{margin-bottom:0;max-width:none;}
 
 /* ---------- Case-study cards (Work) ---------- */
 main.wrap{display:block;}
