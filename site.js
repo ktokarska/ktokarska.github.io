@@ -1,0 +1,69 @@
+/* v3 shared behaviour: mobile nav + count-up stats. Vanilla JS, no libraries. */
+(function () {
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Accordion cases on work.html */
+  var caseToggles = document.querySelectorAll('.case-toggle');
+  caseToggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.case');
+      var expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  /* Mobile hamburger: toggles a full-width panel, closes on link click */
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector(".site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        document.body.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  /* Count-up stats: animate 0 -> target on first viewport entry.
+     Elements opt in with data-count="97" data-prefix="~" data-suffix="%".
+     The element's original text is restored as the exact final value. */
+  var counters = document.querySelectorAll("[data-count]");
+  function runCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    var finalText = el.textContent;
+    if (reduced || isNaN(target)) { el.textContent = finalText; return; }
+    var duration = 1300;
+    var start = null;
+    function frame(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); /* ease-out cubic */
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) {
+        window.requestAnimationFrame(frame);
+      } else {
+        el.textContent = finalText; /* snap to the exact original string */
+      }
+    }
+    window.requestAnimationFrame(frame);
+  }
+  if (counters.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          runCounter(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { io.observe(el); });
+  }
+})();

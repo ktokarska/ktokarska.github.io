@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Editor / misc
+*.swp
+*~
