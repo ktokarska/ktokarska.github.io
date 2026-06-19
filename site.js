@@ -3,14 +3,18 @@
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Accordion cases on work.html */
-  var caseToggles = document.querySelectorAll('.case-toggle');
-  caseToggles.forEach(function(btn){
+  /* Expandable project cards on work.html: the "More details" button
+     toggles its card and flips its own label. The housing card uses a
+     plain <a> with no aria-controls, so it is skipped here and navigates. */
+  var cardExpanders = document.querySelectorAll('.btn-card[aria-controls]');
+  cardExpanders.forEach(function(btn){
     btn.addEventListener('click', function(){
-      var card = btn.closest('.case');
+      var card = btn.closest('.pcard');
       var expanded = card.getAttribute('aria-expanded') === 'true';
       card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      var lbl = btn.querySelector('.lbl');
+      if (lbl) { lbl.textContent = expanded ? 'More details' : 'Less details'; }
     });
   });
 
