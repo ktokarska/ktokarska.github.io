@@ -36,179 +36,171 @@
 <main class="wrap">
 
   <!-- Case 1 (featured) -->
-  <article class="case featured" aria-expanded="false" data-screen-label="Case 01">
-    <button class="case-toggle" aria-label="Expand case" aria-expanded="false">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </button>
-    <h2><span class="case-num">1</span>Two production AI agents, gated on evaluation, inside a regulated insurer</h2>
-    <p class="role">Director of Climate Risk Products and Applied AI · CarbonPool</p>
-    <ul class="metrics">
-      <li>Days → under 10 minutes</li>
-      <li>~80% of team on AI-augmented workflows</li>
-      <li>2 agents in production</li>
-    </ul>
-    <div class="pwo">
-      <div>
-        <h4>Problem</h4>
-        <p>Technical project assessment and counterparty due diligence took several days of manual analyst work, and in an insurance context the output carries liability, so speed could not come at the cost of correctness.</p>
-      </div>
+  <article class="pcard case featured" aria-expanded="false" data-screen-label="Case 01">
+    <div class="pcard-head">
+      <div class="pcard-badges"><span class="pcard-badge">CarbonPool</span><span class="pcard-badge">Production AI</span></div>
+      <h2 class="pcard-title">Two production AI agents, gated on evaluation, inside a regulated insurer</h2>
+      <p class="role">Director of Climate Risk Products and Applied AI · CarbonPool</p>
     </div>
-    <div class="case-body">
-      <div class="pwo pwo-rest">
-        <div>
+    <div class="pcard-main">
+      <ul class="metrics">
+        <li>Days → under 10 minutes</li>
+        <li>~80% of team on AI-augmented workflows</li>
+        <li>2 agents in production</li>
+      </ul>
+      <p class="pcard-teaser">Technical project assessment and counterparty due diligence took several days of manual analyst work, and in an insurance context the output carries liability, so speed could not come at the cost of correctness.</p>
+
+      <div class="pcard-body" id="case01-body">
+        <div class="pwo-block">
           <h4>What I did</h4>
           <p>Architected, built, and deployed two production LLM agents with Claude Code: an applied research agent for technical project assessment, and a due-diligence / KYC agent for project developers, investors, and documentation. Each was gated on the model-evaluation pipeline before any client use. I also rolled out Claude Code to the modelling team and Cowork to the C-suite.</p>
         </div>
-        <div>
+        <div class="pwo-block">
           <h4>Outcome</h4>
           <p>Manual turnaround cut from several days to under 10 minutes. Around 80% of the team onboarded onto AI-augmented workflows, with time saved measured per workflow.</p>
         </div>
+        <h4 class="skills-label">Skills</h4>
+        <ul class="skills">
+          <li>Production agent development</li>
+          <li>Evaluation-first governance</li>
+          <li>AI adoption across a regulated org</li>
+          <li>Tech-to-non-tech translation</li>
+        </ul>
+        <!-- GITHUB BUTTON (Case 1): hidden until a repo link is available.
+             To show it, add a second button to .pcard-actions below:
+             <a class="btn-card" href="https://github.com/ktokarska/">View repo</a> -->
       </div>
-      <h4 class="skills-label">Skills</h4>
-      <ul class="skills">
-        <li>Production agent development</li>
-        <li>Evaluation-first governance</li>
-        <li>AI adoption across a regulated org</li>
-        <li>Tech-to-non-tech translation</li>
+
+      <div class="pcard-actions">
+        <button class="btn-card" type="button" aria-expanded="false" aria-controls="case01-body">
+          <span class="lbl">More details</span>
+          <svg class="chev" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 4: Housing tool. The button navigates to the live demo (no expand).
+       Demo link points to house-price-fair-estimate.html; swap the href for a
+       hosted URL once the dashboard is deployed. Fill the metric pills with real
+       calibration numbers when the back-test is complete. -->
+  <article class="pcard case" data-screen-label="Case 04">
+    <div class="pcard-head">
+      <div class="pcard-badges"><span class="pcard-badge">Open source</span><span class="pcard-badge">Live demo</span></div>
+      <h2 class="pcard-title">A UK fair house price estimator that reports its own confidence</h2>
+      <p class="role">Personal open-source project, built with Claude Code on UK open data</p>
+    </div>
+    <div class="pcard-main">
+      <ul class="metrics">
+        <li>Calibration results</li>
+        <li>Reliability curve</li>
+        <li>Baseline comparison</li>
       </ul>
-      <!-- GITHUB BUTTON (Case 1): hidden until a repo link is available.
-           To show it, remove this comment wrapper and set the href.
-      <p class="case-actions"><a class="btn" href="[GITHUB REPO URL]">GitHub link</a></p>
-      -->
+      <p class="pcard-teaser">Most automated valuation tools give a single confident number with no error band. This one runs a three-method ensemble, matched comparable sales, £/sq ft from EPC-verified floor area, and a public AVM cross-check — then reports a range and a confidence rating, and abstains when the methods disagree.</p>
+
+      <div class="pcard-actions">
+        <a class="btn-card" href="house-price-fair-estimate.html" target="_blank" rel="noopener">
+          View Demo
+          <svg class="ext" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3L5 11M3 7v6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+        <a class="btn-card" href="https://github.com/ktokarska/" target="_blank" rel="noopener">
+          View repo
+          <svg class="ext" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3L5 11M3 7v6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+      </div>
     </div>
   </article>
 
   <!-- Case 2 -->
-  <article class="case" aria-expanded="false" data-screen-label="Case 02">
-    <button class="case-toggle" aria-label="Expand case" aria-expanded="false">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </button>
-    <h2><span class="case-num">2</span>Zero to $XX&hairsp;M: a risk model behind a first-of-kind insurance product</h2>
-    <p class="role">Technical Team Founding Member (Employee #5) · CarbonPool</p>
-    <ul class="metrics">
-      <li>$XX&hairsp;M pre-underwritten premiums</li>
-      <li>50% faster pre-underwriting</li>
-      <li>100+ projects evaluated</li>
-    </ul>
-    <div class="pwo">
-      <div>
-        <h4>Problem</h4>
-        <p>A new carbon-credit insurance product needed a risk model that did not yet exist, built to standards an insurer and its regulator could stand behind.</p>
-      </div>
+  <article class="pcard case" aria-expanded="false" data-screen-label="Case 02">
+    <div class="pcard-head">
+      <div class="pcard-badges"><span class="pcard-badge">CarbonPool</span><span class="pcard-badge">Risk modelling</span></div>
+      <h2 class="pcard-title">Zero to $XX&hairsp;M: a risk model behind a first-of-kind insurance product</h2>
+      <p class="role">Technical Team Founding Member (Employee #5) · CarbonPool</p>
     </div>
-    <div class="case-body">
-      <div class="pwo pwo-rest">
-        <div>
+    <div class="pcard-main">
+      <ul class="metrics">
+        <li>$XX&hairsp;M pre-underwritten premiums</li>
+        <li>50% faster pre-underwriting</li>
+        <li>100+ projects evaluated</li>
+      </ul>
+      <p class="pcard-teaser">A new carbon-credit insurance product needed a risk model that did not yet exist, built to standards an insurer and its regulator could stand behind.</p>
+
+      <div class="pcard-body" id="case02-body">
+        <div class="pwo-block">
           <h4>What I did</h4>
           <p>Built the 0-to-1 risk and model-evaluation pipeline and architected the end-to-end risk-modelling stack and AWS structure to insurance-grade reproducibility. Established model governance, documentation, and data-quality protocols across 4 teams, and evaluated 100+ carbon-removal projects across nature-based and engineered pathways on Verra, Gold Standard, ACR, and CAR registries. The uncertainty methodology was reviewed by FINMA. Rebuilt the analytical codebase with Claude Code as advisor, writer, and reviewer.</p>
         </div>
-        <div>
+        <div class="pwo-block">
           <h4>Outcome</h4>
           <p>The model generated $XX&hairsp;M in pre-underwritten premiums in year one. Pre-underwriting time cut 50% and the assessable project portfolio expanded. Analytical turnaround cut ~97%, recovering around $1,000/day in analyst hours.</p>
         </div>
+        <h4 class="skills-label">Skills</h4>
+        <ul class="skills">
+          <li>0-to-1 risk modelling</li>
+          <li>Regulatory accountability</li>
+          <li>Model governance</li>
+          <li>Technical architecture</li>
+          <li>Portfolio and pricing input</li>
+        </ul>
+        <!-- GITHUB BUTTON (Case 2): hidden until a repo link is available.
+             To show it, add a second button to .pcard-actions below:
+             <a class="btn-card" href="https://github.com/ktokarska/">View repo</a> -->
       </div>
-      <h4 class="skills-label">Skills</h4>
-      <ul class="skills">
-        <li>0-to-1 risk modelling</li>
-        <li>Regulatory accountability</li>
-        <li>Model governance</li>
-        <li>Technical architecture</li>
-        <li>Portfolio and pricing input</li>
-      </ul>
-      <!-- GITHUB BUTTON (Case 2): hidden until a repo link is available.
-           To show it, remove this comment wrapper and set the href.
-      <p class="case-actions"><a class="btn" href="[GITHUB REPO URL]">GitHub link</a></p>
-      -->
+
+      <div class="pcard-actions">
+        <button class="btn-card" type="button" aria-expanded="false" aria-controls="case02-body">
+          <span class="lbl">More details</span>
+          <svg class="chev" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
     </div>
   </article>
 
   <!-- Case 3 -->
-  <article class="case" aria-expanded="false" data-screen-label="Case 03">
-    <button class="case-toggle" aria-label="Expand case" aria-expanded="false">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </button>
-    <h2><span class="case-num">3</span>TCFD physical-risk disclosure for enterprise clients at McKinsey</h2>
-    <p class="role">Research Science Specialist (Climate Data Scientist) · McKinsey &amp; Company</p>
-    <ul class="metrics">
-      <li>~$XX&hairsp;M revenue-at-risk per client</li>
-      <li>3 enterprise clients</li>
-      <li>30+ AI/ML technologies assessed</li>
-    </ul>
-    <div class="pwo">
-      <div>
-        <h4>Problem</h4>
-        <p>Three top enterprise clients needed TCFD physical-risk disclosures that quantified financial exposure credibly enough for C-suite, risk, and technical stakeholders.</p>
-      </div>
+  <article class="pcard case" aria-expanded="false" data-screen-label="Case 03">
+    <div class="pcard-head">
+      <div class="pcard-badges"><span class="pcard-badge">McKinsey&amp;Co</span><span class="pcard-badge">Climate analytics</span></div>
+      <h2 class="pcard-title">TCFD physical-risk disclosure for enterprise clients at McKinsey</h2>
+      <p class="role">Research Science Specialist (Climate Data Scientist) · McKinsey &amp; Company</p>
     </div>
-    <div class="case-body">
-      <div class="pwo pwo-rest">
-        <div>
+    <div class="pcard-main">
+      <ul class="metrics">
+        <li>~$XX&hairsp;M revenue-at-risk per client</li>
+        <li>3 enterprise clients</li>
+        <li>30+ AI/ML technologies assessed</li>
+      </ul>
+      <p class="pcard-teaser">Three top enterprise clients needed TCFD physical-risk disclosures that quantified financial exposure credibly enough for C-suite, risk, and technical stakeholders.</p>
+
+      <div class="pcard-body" id="case03-body">
+        <div class="pwo-block">
           <h4>What I did</h4>
           <p>Delivered asset-level climate-hazard exposure analysis using Python, statistical modelling, and geospatial visualisation, and presented findings across stakeholder levels. Separately, built and led a competitive-intelligence programme covering 30+ AI/ML climate and decarbonisation technologies.</p>
         </div>
-        <div>
+        <div class="pwo-block">
           <h4>Outcome</h4>
           <p>Quantified approximately $XX&hairsp;M in revenue-at-risk per client. The competitive-intelligence investment thesis was adopted by the firm's green-business-building practice and published in a firm report.</p>
         </div>
+        <h4 class="skills-label">Skills</h4>
+        <ul class="skills">
+          <li>Financial-impact quantification</li>
+          <li>Executive communication</li>
+          <li>Geospatial and statistical modelling</li>
+          <li>Competitive intelligence</li>
+        </ul>
+        <!-- GITHUB BUTTON (Case 3): hidden until a repo link is available.
+             To show it, add a second button to .pcard-actions below:
+             <a class="btn-card" href="https://github.com/ktokarska/">View repo</a> -->
       </div>
-      <h4 class="skills-label">Skills</h4>
-      <ul class="skills">
-        <li>Financial-impact quantification</li>
-        <li>Executive communication</li>
-        <li>Geospatial and statistical modelling</li>
-        <li>Competitive intelligence</li>
-      </ul>
-      <!-- GITHUB BUTTON (Case 3): hidden until a repo link is available.
-           To show it, remove this comment wrapper and set the href.
-      <p class="case-actions"><a class="btn" href="[GITHUB REPO URL]">GitHub link</a></p>
-      -->
+
+      <div class="pcard-actions">
+        <button class="btn-card" type="button" aria-expanded="false" aria-controls="case03-body">
+          <span class="lbl">More details</span>
+          <svg class="chev" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
     </div>
   </article>
-
-  <!-- Case 4: HOLD until the public GitHub repo is published.
-       To enable: remove this comment wrapper, add the repo URL to the <a> in the title,
-       and fill the metrics once the back-test is complete.
-
-  <article class="case" aria-expanded="false" data-screen-label="Case 04">
-    <button class="case-toggle" aria-label="Expand case" aria-expanded="false">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </button>
-    <h2><span class="case-num">4</span><a href="[GITHUB REPO URL]">A UK house-price estimator that reports its own confidence</a></h2>
-    <p class="role">Personal open-source project · built with Claude Code on UK open data</p>
-    <ul class="metrics">
-      <li>[Calibration results]</li>
-      <li>[Reliability curve]</li>
-      <li>[Baseline comparison]</li>
-    </ul>
-    <div class="pwo">
-      <div>
-        <h4>Problem</h4>
-        <p>Automated valuation tools present a single confident number with no honest error band and no sense of when they should not be trusted, which is most misleading exactly where data is thin.</p>
-      </div>
-    </div>
-    <div class="case-body">
-      <div class="pwo pwo-rest">
-        <div>
-          <h4>What I did</h4>
-          <p>Built a three-method ensemble (matched comps, £/sq ft from EPC-verified floor area, and a public AVM cross-check) reconciled by method agreement, with comparable retrieval over a vector store. Designed the product around one principle: it reports a range and a confidence rating, and abstains when the methods disagree rather than guessing. Wrote the evaluation plan and fixed its pass/fail thresholds before producing any results, then back-tested blind against actual sold prices.</p>
-        </div>
-        <div>
-          <h4>Outcome</h4>
-          <p>[Add calibration results once complete.] The project demonstrates eval-first product discipline: the evaluation is built before the product, the same habit applied under insurance liability at CarbonPool.</p>
-        </div>
-      </div>
-      <h4 class="skills-label">Skills</h4>
-      <ul class="skills">
-        <li>AI product design</li>
-        <li>Evaluation and calibration</li>
-        <li>Embeddings and vector retrieval</li>
-        <li>Open-data pipelines</li>
-        <li>Honest uncertainty communication</li>
-      </ul>
-      <p class="case-actions"><a class="btn" href="[GITHUB REPO URL]">GitHub link</a></p>
-    </div>
-  </article>
-  -->
 
 </main>
 
