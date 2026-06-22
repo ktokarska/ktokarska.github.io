@@ -247,7 +247,7 @@ img{max-width:100%;display:block;}
   text-transform:uppercase;letter-spacing:.16em;
   color:var(--accent);opacity:.7;margin-bottom:8px;
 }
-.arc-jobtitle{font-size:1.0rem;color:var(--muted);margin:4px 0 10px;font-weight:700;font-style:italic;}
+.arc-jobtitle{font-size:1.0rem;color:var(--muted);margin:4px 0 10px;font-weight:400;font-style:italic;}
 .arc-cta{margin-top:24px;display:inline-block;}
 .arc-closing{
   margin-top:38px;
