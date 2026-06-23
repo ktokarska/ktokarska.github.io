@@ -78,6 +78,7 @@ button{font-family:inherit;cursor:pointer;}
   padding:3px 7px;border-radius:5px;
 }
 .head-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.top-strip{display:flex;justify-content:flex-start;padding:9px 0 7px;border-bottom:1px solid var(--border);}
 .badges{display:flex;gap:8px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--faint);}
 .badges span{display:inline-flex;align-items:center;gap:6px;}
 .badges span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--pass);}
@@ -184,10 +185,10 @@ main{padding:30px 0 80px;}
 .val-empty{color:var(--muted);font-size:.95rem;padding:46px 0;text-align:center;border:1px dashed var(--border-2);border-radius:14px;}
 
 .estimate-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;}
-.hero{padding:26px 28px;}
+.hero{padding:14px 28px;}
 .hero .h-label{font-size:.95rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);}
-.hero .h-price{font-family:"IBM Plex Mono",monospace;font-size:clamp(2.6rem,5vw,3.5rem);font-weight:600;line-height:1;margin:10px 0 4px;letter-spacing:-0.01em;}
-.hero .h-range{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;color:var(--muted);margin-top:10px;}
+.hero .h-price{font-family:"IBM Plex Mono",monospace;font-size:clamp(2.6rem,5vw,3.5rem);font-weight:600;line-height:1;margin:5px 0 2px;letter-spacing:-0.01em;}
+.hero .h-range{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;color:var(--muted);margin-top:6px;}
 .conf-row{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--border);}
 .conf-pill{font-size:.78rem;font-weight:700;letter-spacing:.04em;padding:5px 13px;border-radius:999px;text-transform:uppercase;}
 .conf-High{color:var(--pass);background:var(--pass-bg);}
@@ -295,6 +296,14 @@ details.comps[open] summary .tw{transform:rotate(90deg);}
 
 <header class="app-head">
   <div class="wrap">
+    <div class="top-strip">
+      <div class="badges">
+        <span>Snapshot pinned 2026-06-19</span>
+        <span>Methodology v2.1</span>
+        <span>Open data: Land Registry + EPC</span>
+        <span>Status: SL6, W13, UB3 all quarantined</span>
+      </div>
+    </div>
     <div class="head-top">
       <div class="brand-block">
         <div class="brand">Fair house price estimator <span class="demo-tag">DEMO</span></div>
@@ -305,12 +314,6 @@ details.comps[open] summary .tw{transform:rotate(90deg);}
         </div>
       </div>
       <div class="head-actions">
-        <div class="badges">
-          <span>Snapshot pinned 2026-06-19</span>
-          <span>Methodology v2.1</span>
-          <span>Open data: Land Registry + EPC</span>
-          <span>Status: SL6, W13, UB3 all quarantined</span>
-        </div>
         <a class="back-link" href="work.html">← Back to Work</a>
         <a class="back-link" href="contact.html">Contact</a>
         <span class="contact-note">Contact me if you would like to add another postal code.</span>
