@@ -734,8 +734,8 @@ function renderValuation(){
     + '</p>';
 
   host.innerHTML =
-    caveat
-    + '<div class="estimate-grid">'+estimateBlock+verdictHtml+'</div>'
+    '<div class="estimate-grid">'+estimateBlock+verdictHtml+'</div>'
+    + caveat
     + '<div class="section" style="margin-top:34px;"><div class="section-head"><span class="s-kicker">EXPLANATION</span></div>'
     + '<div class="panel panel-pad">'+explanation+'</div></div>'
     + '<div class="section" style="margin-top:22px;"><div class="section-head"><span class="s-kicker">METHOD BREAKDOWN</span></div>'
@@ -746,10 +746,10 @@ function renderValuation(){
 
 /* Persistent honesty strip for areas that run the engine but are not certified. */
 function certCaveat(){
-  return '<div class="panel state-block" style="border-left:5px solid var(--warn);margin-bottom:18px;">'
+  return '<div class="panel state-block" style="border-left:5px solid var(--warn);margin-top:18px;margin-bottom:18px;">'
     + '<div class="state-icon warn">!</div>'
     + '<div><h3>Demonstration estimate — area not certified</h3>'
-    + '<p>This area\'s latest calibration verdict is <strong>QUARANTINE</strong>, so the tool is not certified to issue a price verdict here. The figures below run the real valuation engine on open data as a working demonstration. See the <a href="#" data-goto-evals style="color:var(--accent);font-weight:600;">Evals tab</a> for the gates it missed.</p></div></div>';
+    + '<p>This area\'s latest calibration verdict is <strong>QUARANTINE</strong>, so the tool is not certified to issue a price verdict here. These figures run the real valuation engine on open data as a working demonstration. See the <a href="#" data-goto-evals style="color:var(--accent);font-weight:600;">Evals tab</a> for the gates it missed.</p></div></div>';
 }
 
 function methodRow(id,desc,val,avail,flag){
