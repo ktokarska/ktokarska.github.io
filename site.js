@@ -34,6 +34,23 @@
     });
   }
 
+  /* Anti-scrape email: the address is stored split across data-user/data-domain
+     and only assembled into a real mailto: link when a browser runs this.
+     Bulk harvesters that parse raw HTML see only the "(at)" fallback text. */
+  var emailEl = document.querySelector("[data-email]");
+  if (emailEl) {
+    var user = emailEl.getAttribute("data-user");
+    var domain = emailEl.getAttribute("data-domain");
+    if (user && domain) {
+      var addr = user + "@" + domain;
+      var link = document.createElement("a");
+      link.href = "mailto:" + addr;
+      link.textContent = addr;
+      emailEl.textContent = "";
+      emailEl.appendChild(link);
+    }
+  }
+
   /* Count-up stats: animate 0 -> target on first viewport entry.
      Elements opt in with data-count="97" data-prefix="~" data-suffix="%".
      The element's original text is restored as the exact final value. */
