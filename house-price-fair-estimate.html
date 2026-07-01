@@ -78,10 +78,6 @@ button{font-family:inherit;cursor:pointer;}
   padding:3px 7px;border-radius:5px;
 }
 .head-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
-.top-strip{display:flex;justify-content:flex-start;padding:9px 0 7px;border-bottom:1px solid var(--border);}
-.badges{display:flex;gap:8px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--faint);}
-.badges span{display:inline-flex;align-items:center;gap:6px;}
-.badges span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--pass);}
 .back-link{
   display:inline-flex;align-items:center;gap:6px;
   color:var(--ink);text-decoration:none;font-size:.82rem;font-weight:600;
@@ -120,15 +116,15 @@ button{font-family:inherit;cursor:pointer;}
 .search-row .field label{color:var(--faint);}
 .field input::placeholder{color:var(--faint);}
 .field select:focus,.field input:focus{outline:2px solid var(--accent);outline-offset:1px;}
-.tabs{display:inline-flex;background:var(--inset);border:1px solid var(--border);border-radius:10px;padding:3px;gap:2px;}
+.tabs{display:inline-flex;justify-content:flex-start;gap:0.5cm;}
 .tabs button{
-  border:0;background:transparent;color:var(--muted);
-  font-size:.9rem;font-weight:600;padding:9px 14px;border-radius:7px;
+  border:1px solid var(--border);background:var(--inset);color:var(--muted);
+  font-size:.9rem;font-weight:600;padding:9px 14px;border-radius:8px;
   min-width:104px;text-align:center;
-  transition:background-color .15s ease,color .15s ease;
+  transition:background-color .15s ease,color .15s ease,border-color .15s ease;
 }
 .tabs button:hover{color:var(--ink);}
-.tabs button[aria-selected="true"]{background:#c8981d;color:#241900;box-shadow:var(--shadow);}
+.tabs button[aria-selected="true"]{background:#c8981d;border-color:#c8981d;color:#241900;box-shadow:var(--shadow);}
 [data-theme="dark"] .tabs button[aria-selected="true"]{color:#241900;}
 
 /* ---------- Layout ---------- */
@@ -296,14 +292,6 @@ details.comps[open] summary .tw{transform:rotate(90deg);}
 
 <header class="app-head">
   <div class="wrap">
-    <div class="top-strip">
-      <div class="badges">
-        <span>Snapshot pinned 2026-06-19</span>
-        <span>Methodology v2.1</span>
-        <span>Open data: Land Registry + EPC</span>
-        <span>Status: SL6, W13, UB3 all quarantined</span>
-      </div>
-    </div>
     <div class="head-top">
       <div class="brand-block">
         <div class="brand">Fair house price estimator <span class="demo-tag">DEMO</span></div>
@@ -322,7 +310,7 @@ details.comps[open] summary .tw{transform:rotate(90deg);}
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" style="margin-top:34px;">
   <section id="tab-valuation" class="tabpanel" role="tabpanel" aria-label="Valuation">
     <h2 class="val-intro"><span class="vi-1">Choose an area and property type, then <span class="vi-cmd">get estimate</span> of fair price<br>based on empirical data-driven models of past houses sold.</span><span class="vi-2">Optional: Add asking price to know if it is fair or over/under priced.</span></h2>
     <div class="search-row">
